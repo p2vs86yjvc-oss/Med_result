@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+background:#fff;
+width:100%;
+max-width:420px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+text-align:center;
+}
+
+h1{
+color:#0b5ed7;
+margin-bottom:10px;
+}
+
+p{
+margin-bottom:20px;
+color:#666;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+font-size:17px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:14px;
+font-size:18px;
+background:#0b5ed7;
+color:#fff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+#error{
+color:red;
+margin-top:15px;
+}
+
+#result{
+display:none;
+width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Exam Result</h1>
+
+<p>Please enter your Username and Password</p>
+
+<input id="username" type="text" placeholder="Username">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="error"></p>
+
+<img id="result" src="./result.jpg" alt="Result">
+
+</div>
+
+<script>
+function login(){
+
+let username=document.getElementById("username").value.trim();
+let password=document.getElementById("password").value.trim();
+
+if(username==="GK20230505" && password==="2023050"){
+
+document.getElementById("error").innerHTML="";
+document.getElementById("result").style.display="block";
+
+}else{
+
+document.getElementById("result").style.display="none";
+document.getElementById("error").innerHTML="Invalid Username or Password";
+
+}
+
+}
+</script>
+
+</body>
+</html>
